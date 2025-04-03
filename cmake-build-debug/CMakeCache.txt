@@ -235,6 +235,15 @@ SDL2_INCLUDE_DIR:PATH=/Users/monicasahakyan/Documents/SDL2-2.0.3/build/sdl2_loca
 SDL2_LIBRARY:STRING=/usr/local/lib/libSDL2main.a;/usr/local/lib/libSDL2.dylib;-framework Cocoa
 
 //Value Computed by CMake
+SDLTest2_BINARY_DIR:STATIC=/Users/monicasahakyan/CLionProjects/cavestory/cmake-build-debug
+
+//Value Computed by CMake
+SDLTest2_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+SDLTest2_SOURCE_DIR:STATIC=/Users/monicasahakyan/CLionProjects/cavestory
+
+//Value Computed by CMake
 cavestory_BINARY_DIR:STATIC=/Users/monicasahakyan/CLionProjects/cavestory/cmake-build-debug
 
 //Value Computed by CMake

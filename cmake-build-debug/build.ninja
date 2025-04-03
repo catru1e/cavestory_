@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_cavestory: phony || .
 build CMakeFiles/cavestory.dir/main.cpp.o: CXX_COMPILER__cavestory_unscanned_Debug /Users/monicasahakyan/CLionProjects/cavestory/main.cpp || cmake_object_order_depends_target_cavestory
   DEP_FILE = CMakeFiles/cavestory.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
-  INCLUDES = -I/Users/monicasahakyan/Documents/SDL2-2.0.3/build/sdl2_local/include
+  INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers
   OBJECT_DIR = CMakeFiles/cavestory.dir
   OBJECT_FILE_DIR = CMakeFiles/cavestory.dir
 
@@ -66,8 +66,8 @@ build CMakeFiles/cavestory.dir/main.cpp.o: CXX_COMPILER__cavestory_unscanned_Deb
 
 build cavestory: CXX_EXECUTABLE_LINKER__cavestory_Debug CMakeFiles/cavestory.dir/main.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7
-  LINK_LIBRARIES = -Wl,-rpath,/Users/monicasahakyan/Documents/SDL2-2.0.3/build/sdl2_local/lib  -lSDL2
-  LINK_PATH = -L/Users/monicasahakyan/Documents/SDL2-2.0.3/build/sdl2_local/lib
+  LINK_LIBRARIES = -Wl,-rpath,/Library/Frameworks/SDL2.framework  -framework SDL2
+  LINK_PATH = -L/Library/Frameworks/SDL2.framework
   OBJECT_DIR = CMakeFiles/cavestory.dir
   POST_BUILD = :
   PRE_LINK = :

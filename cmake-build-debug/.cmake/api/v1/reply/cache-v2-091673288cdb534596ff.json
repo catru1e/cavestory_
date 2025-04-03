@@ -1166,6 +1166,30 @@
 			"value" : "/Users/monicasahakyan/CLionProjects/cavestory"
 		},
 		{
+			"name" : "SDL-release-2.0.3_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for SDL-release-2.0.3."
+				}
+			],
+			"type" : "PATH",
+			"value" : "SDL-release-2.0.3_DIR-NOTFOUND"
+		},
+		{
+			"name" : "SDL2-release-2.0.3_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for SDL2-release-2.0.3."
+				}
+			],
+			"type" : "PATH",
+			"value" : "SDL2-release-2.0.3_DIR-NOTFOUND"
+		},
+		{
 			"name" : "SDL2MAIN_LIBRARY",
 			"properties" : 
 			[
@@ -1187,7 +1211,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "SDL2_DIR-NOTFOUND"
+			"value" : "/usr/local/opt/sdl2/lib/cmake/SDL2"
 		},
 		{
 			"name" : "SDL2_INCLUDE_DIR",

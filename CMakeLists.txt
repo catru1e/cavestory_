@@ -4,6 +4,8 @@ project(cavestory)
 set(CMAKE_CXX_STANDARD 17)
 
 # Пути к SDL2
+set(CMAKE_PREFIX_PATH "/usr/local/opt/sdl2/lib/cmake/SDL2")
+
 find_package(SDL2 REQUIRED)
 
 include_directories(${SDL2_INCLUDE_DIRS})

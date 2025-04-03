@@ -222,11 +222,17 @@ MyGame_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 MyGame_SOURCE_DIR:STATIC=/Users/monicasahakyan/CLionProjects/cavestory
 
+//The directory containing a CMake configuration file for SDL-release-2.0.3.
+SDL-release-2.0.3_DIR:PATH=SDL-release-2.0.3_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for SDL2-release-2.0.3.
+SDL2-release-2.0.3_DIR:PATH=SDL2-release-2.0.3_DIR-NOTFOUND
+
 //Path to a library.
 SDL2MAIN_LIBRARY:FILEPATH=/usr/local/lib/libSDL2main.a
 
 //The directory containing a CMake configuration file for SDL2.
-SDL2_DIR:PATH=SDL2_DIR-NOTFOUND
+SDL2_DIR:PATH=/usr/local/opt/sdl2/lib/cmake/SDL2
 
 //Path to a file.
 SDL2_INCLUDE_DIR:PATH=/Users/monicasahakyan/Documents/SDL2-2.0.3/build/sdl2_local/include/SDL2

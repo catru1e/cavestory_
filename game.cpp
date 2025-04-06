@@ -1,8 +1,10 @@
+/*Game class
+* This class holds  all information for our main loop.
+*/
 #include "game.h"
 #include "graphics.h"
 #include "input.h"
 
-#include <iostream>
 #include <SDL2/SDL.h>
 #include <algorithm>
 
@@ -16,7 +18,6 @@ Game::Game(){
     this->gameLoop();
 }
 Game::~Game(){
-
 }
 
 void Game::gameLoop(){
@@ -24,8 +25,8 @@ void Game::gameLoop(){
     Input input;
     SDL_Event event;
 
-    int LAST_UPDATE_TIME = SDL_GetTicks();
-//start the game loop
+    int LAST_UPDATE_TIME = SDL_GetTicks(); //gets the number of milliseconds
+    //start the game loop
     while (true){
         input.beginNewFrame();
 

@@ -1,8 +1,11 @@
+/* Input class
+*  Keeps track of keyboard state
+*/
 #include "input.h"
 
 #include <SDL2/SDL.h>
 
-//reseting the keys that are no longer relevant
+//reseting the keys that are no longer relevant (get called in at the beginning of each new frame)
 void Input::beginNewFrame(){
     this->_pressedKeys.clear();
     this->_releasedKeys.clear();

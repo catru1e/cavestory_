@@ -56,6 +56,13 @@ build CMakeFiles/cavestory.dir/main.cpp.o: CXX_COMPILER__cavestory_unscanned_Deb
   OBJECT_DIR = CMakeFiles/cavestory.dir
   OBJECT_FILE_DIR = CMakeFiles/cavestory.dir
 
+build CMakeFiles/cavestory.dir/game.cpp.o: CXX_COMPILER__cavestory_unscanned_Debug /Users/monicasahakyan/CLionProjects/cavestory/game.cpp || cmake_object_order_depends_target_cavestory
+  DEP_FILE = CMakeFiles/cavestory.dir/game.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
+  INCLUDES = -I/usr/local/Cellar/sdl2/2.32.0/include -isystem /usr/local/Cellar/sdl2/2.32.0/include/SDL2
+  OBJECT_DIR = CMakeFiles/cavestory.dir
+  OBJECT_FILE_DIR = CMakeFiles/cavestory.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target cavestory
@@ -64,7 +71,7 @@ build CMakeFiles/cavestory.dir/main.cpp.o: CXX_COMPILER__cavestory_unscanned_Deb
 #############################################
 # Link the executable cavestory
 
-build cavestory: CXX_EXECUTABLE_LINKER__cavestory_Debug CMakeFiles/cavestory.dir/main.cpp.o | /usr/local/Cellar/sdl2/2.32.0/lib/libSDL2.dylib
+build cavestory: CXX_EXECUTABLE_LINKER__cavestory_Debug CMakeFiles/cavestory.dir/main.cpp.o CMakeFiles/cavestory.dir/game.cpp.o | /usr/local/Cellar/sdl2/2.32.0/lib/libSDL2.dylib
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7
   LINK_LIBRARIES = -Wl,-rpath,/usr/local/Cellar/sdl2/2.32.0/lib  /usr/local/Cellar/sdl2/2.32.0/lib/libSDL2.dylib
   LINK_PATH = -L/usr/local/Cellar/sdl2/2.32.0/lib

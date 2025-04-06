@@ -12,5 +12,7 @@ include_directories(${SDL2_INCLUDE_DIRS})
 add_executable(cavestory
         main.cpp
         game.cpp
+        input.cpp
+        graphics.cpp
 )
 target_link_libraries(cavestory ${SDL2_LIBRARIES})

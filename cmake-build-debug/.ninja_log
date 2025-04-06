@@ -1,0 +1,9 @@
+# ninja log v6
+1	66	1743961711785561497	CMakeFiles/cavestory.dir/main.cpp.o	ebb5d633a2de518e
+2	938	1743961711786069557	CMakeFiles/cavestory.dir/game.cpp.o	11fee78d7d2ae029
+2	9	1743961794628873825	clean	e625fed40095271c
+4	85	1743961794699109759	CMakeFiles/cavestory.dir/main.cpp.o	ebb5d633a2de518e
+4	1014	1743961794699689158	CMakeFiles/cavestory.dir/game.cpp.o	11fee78d7d2ae029
+6	1067	1743961794700990661	CMakeFiles/cavestory.dir/input.cpp.o	63566c2ec961d8fc
+7	1180	1743961794702081157	CMakeFiles/cavestory.dir/graphics.cpp.o	de64aa59b972142d
+1180	1247	1743961795875116328	cavestory	55ec8acfcb8375d1

@@ -4,6 +4,7 @@
 #include "graphics.h"
 
 #include <iostream>
+#include <SDL_image.h>
 
 Graphics::Graphics() {
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
@@ -33,9 +34,24 @@ Graphics::~Graphics() {
     SDL_Quit();
 }
 
+SDL_Surface* Graphics::loadImage(const std::string &filePath) {
+    if (this->spriteSheets.count(filePath) ==  0) {
+        this->spriteSheets[filePath] = IMG_Load(filePath.c_str());
+    }
+    return this->spriteSheets[filePath];
+}
+
+void Graphics::blitSurface(SDL_Texture* texture, SDL_Rect* sourceRectangle, SDL_Rect* destinationRectangle){
+    SDL_RenderCopy(this->renderer, texture, sourceRectangle, destinationRectangle);
+}
+
+void Graphics::flip() {
+    SDL_RenderPresent(this->renderer);
+}
+
 void Graphics::clear() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // Black color
-    SDL_RenderClear(renderer);
+    SDL_RenderClear(this->renderer);
 }
 
 void Graphics::present() {
@@ -43,5 +59,5 @@ void Graphics::present() {
 }
 
 SDL_Renderer* Graphics::getRenderer() const {
-    return renderer;
+    return this->renderer;
 }

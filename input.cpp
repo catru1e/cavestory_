@@ -1,5 +1,5 @@
 /* Input class
-*  Keeps track of keyboard state
+ * Keeps track of keyboard state
 */
 #include "input.h"
 

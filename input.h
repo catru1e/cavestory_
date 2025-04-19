@@ -19,6 +19,4 @@ private:
     std::map<SDL_Scancode, bool> _releasedKeys;
 };
 
-
-
 #endif //INPUT_H

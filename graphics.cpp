@@ -11,35 +11,40 @@ Graphics::Graphics() {
         std::cerr << "SDL Initialization Failed: " << SDL_GetError() << std::endl;
         exit(1);
     }
-
-    window = SDL_CreateWindow("Cave Story", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN);
+    SDL_CreateWindowAndRenderer(640, 480, 0, &this->window, &this->renderer);
+    //  window = SDL_CreateWindow("Cave Story", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN);
     if (!window) {
         std::cerr << "Window creation failed: " << SDL_GetError() << std::endl;
         SDL_Quit();
         exit(1);
     }
-
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     if (!renderer) {
         std::cerr << "Renderer creation failed: " << SDL_GetError() << std::endl;
         SDL_DestroyWindow(window);
         SDL_Quit();
         exit(1);
     }
+
+    SDL_SetWindowTitle(this->window, "CaveStory");
+    //  renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 }
 
 Graphics::~Graphics() {
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
-    SDL_Quit();
+    SDL_DestroyWindow(this->window);
 }
 
 SDL_Surface* Graphics::loadImage(const std::string &filePath) {
-    if (this->spriteSheets.count(filePath) ==  0) {
-        this->spriteSheets[filePath] = IMG_Load(filePath.c_str());
+    if (this->spriteSheets.count(filePath) == 0) {
+        SDL_Surface* loadedImage = IMG_Load(filePath.c_str());
+        if (!loadedImage) {
+            std::cerr << "IMG_Load failed for '" << filePath << "': " << IMG_GetError() << std::endl;
+        } else {
+            this->spriteSheets[filePath] = loadedImage;
+        }
     }
     return this->spriteSheets[filePath];
 }
+
 
 void Graphics::blitSurface(SDL_Texture* texture, SDL_Rect* sourceRectangle, SDL_Rect* destinationRectangle){
     SDL_RenderCopy(this->renderer, texture, sourceRectangle, destinationRectangle);
@@ -50,12 +55,7 @@ void Graphics::flip() {
 }
 
 void Graphics::clear() {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // Black color
     SDL_RenderClear(this->renderer);
-}
-
-void Graphics::present() {
-    SDL_RenderPresent(renderer);
 }
 
 SDL_Renderer* Graphics::getRenderer() const {

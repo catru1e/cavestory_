@@ -1,9 +1,7 @@
 #include "sprite.h"
+#include "graphics.h"
 
 #include <iostream>
-#include <ostream>
-
-#include "graphics.h"
 
 Sprite::Sprite(){}
 
@@ -17,7 +15,7 @@ Sprite::Sprite(Graphics& graphics, const std::string& filePath, int sourceX, int
 
     this->spriteSheet = SDL_CreateTextureFromSurface(graphics.getRenderer(), graphics.loadImage(filePath));
     if (this->spriteSheet == NULL){
-        std::cout << "Failed to load sprite texture" << std::endl;
+        std::cout << "Failed to load sprite texture\n";
     }
 }
 Sprite::~Sprite(){}

@@ -2,6 +2,7 @@
 * Holds all the info abt the graphics for the game
 */
 #include "graphics.h"
+#include "globals.h"
 
 #include <iostream>
 #include <SDL_image.h>
@@ -11,7 +12,7 @@ Graphics::Graphics() {
         std::cerr << "SDL Initialization Failed: " << SDL_GetError() << std::endl;
         exit(1);
     }
-    SDL_CreateWindowAndRenderer(640, 480, 0, &this->window, &this->renderer);
+    SDL_CreateWindowAndRenderer(globals::SCREEN_WIDTH, globals::SCREEN_HEIGHT, 0, &this->window, &this->renderer);
     //  window = SDL_CreateWindow("Cave Story", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN);
     if (!window) {
         std::cerr << "Window creation failed: " << SDL_GetError() << std::endl;

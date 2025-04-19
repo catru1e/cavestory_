@@ -23,6 +23,8 @@ add_executable(cavestory
         graphics.cpp
         sprite.cpp
         sprite.h
+        globals.cpp
+        globals.h
 )
 
 # Link SDL2 and SDL2_image libraries

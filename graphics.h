@@ -28,10 +28,10 @@ public:
     SDL_Renderer* getRenderer() const; // returns the renderer
 
 private:
-    SDL_Window* window;
-    SDL_Renderer* renderer;
+    SDL_Window* _window;
+    SDL_Renderer* _renderer;
 
-    std::map<std::string, SDL_Surface*> spriteSheets;
+    std::map<std::string, SDL_Surface*> _spriteSheets;
 };
 
 #endif

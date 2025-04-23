@@ -65,4 +65,5 @@ void Game::draw(Graphics &graphics){
 }
 
 void Game::update(float elapsedTime){
+    this->_player.update(elapsedTime);
 }

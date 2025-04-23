@@ -15,7 +15,7 @@ class Sprite {
 public:
     Sprite();
     Sprite(Graphics& graphics, const std::string &filePath, int sourceX,
-        int sourceY, int width, int height, float positionX, float positionY);
+        int sourceY, int width, int height, float posX, float posY);
     virtual ~Sprite();
     //virtual - bc we gonna hve some stuff in the update probably, but we're gonna be overriding it in animated sprite...
     virtual void update();
@@ -23,7 +23,7 @@ public:
 
 protected:
     SDL_Rect _sourceRect;
-    SDL_Texture* spriteSheet;
+    SDL_Texture* _spriteSheet;
 private:
     float x, y; //position of the sprite
 };

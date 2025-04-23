@@ -16,7 +16,7 @@ class Graphics {
 public:
     Graphics();
     ~Graphics();
-    //loads an image into the spriteSheets map if it doesnt already exist
+    //loads an image into the spriteSheets map if it doesn't already exist
     SDL_Surface* loadImage(const std::string &filePath);
 
     //drows a texture to a certain part of the screen

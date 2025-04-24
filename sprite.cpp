@@ -8,7 +8,7 @@
 Sprite::Sprite(){}
 
 Sprite::Sprite(Graphics& graphics, const std::string& filePath, int sourceX, int sourceY,
-    int width, int height, float posX, float posY) : x(posX), y(posY)
+    int width, int height, float posX, float posY) : _x(posX), _y(posY)
 {
     this->_sourceRect.x = sourceX;
     this->_sourceRect.y = sourceY;
@@ -30,5 +30,4 @@ void Sprite::draw(Graphics& graphics, int x, int y) {
 
 void Sprite::update()
 {
-
 }

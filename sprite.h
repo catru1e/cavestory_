@@ -1,10 +1,8 @@
 #ifndef SPRITE_H
 #define SPRITE_H
-
 /* Sprite class
  * Holds the info of individual sprties
 */
-
 #include "graphics.h"
 #include <string>
 #include <SDL2/SDL.h>
@@ -24,8 +22,9 @@ public:
 protected:
     SDL_Rect _sourceRect;
     SDL_Texture* _spriteSheet;
+
+    float _x, _y; //position of the sprite
 private:
-    float x, y; //position of the sprite
 };
 
 #endif //SPRITE_H

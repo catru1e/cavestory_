@@ -10,3 +10,11 @@
 2	9	1743961794628873825	clean	e625fed40095271c
 6	203	1745514042628265826	build.ninja	95a5855d2b87abd8
 9	951	1745514030646942330	CMakeFiles/cavestory.dir/player.cpp.o	93e7c673964f2f1d
+8	142	1745514925907963579	CMakeFiles/cavestory.dir/globals.cpp.o	35a81eb14a40972d
+7	1831	1745514925906473116	CMakeFiles/cavestory.dir/main.cpp.o	854db52f407629dd
+143	1959	1745514926042502682	CMakeFiles/cavestory.dir/player.cpp.o	93e7c673964f2f1d
+7	1973	1745514925907031722	CMakeFiles/cavestory.dir/game.cpp.o	b5b0a4081587f39c
+8	1982	1745514925907550055	CMakeFiles/cavestory.dir/sprite.cpp.o	bfce0be1a62e72f4
+8	2088	1745514925907292105	CMakeFiles/cavestory.dir/graphics.cpp.o	7fe1c682036a20b2
+9	2102	1745514925908283894	CMakeFiles/cavestory.dir/animatedsprite.cpp.o	903b1ca49b954d92
+2102	2204	1745514928002105028	cavestory	7a63654bdd83ceea

@@ -4,6 +4,7 @@
 #include <string>
 
 #include "animatedsprite.h"
+#include "globals.h"
 
 class Graphics;
 
@@ -15,10 +16,16 @@ public:
     void draw(Graphics &graphics);
     void update(float elapsedTime);
 
+    void moveLeft(); // moving left by -dx
+    void moveRight(); // moving right by dx
+    void stopMoving();
+
     virtual void animationDone(std::string currentAnimation);
     virtual void setupAnimations();
 private:
+    float _dx, _dy;
 
+    Direction _facing;
 };
 
 #endif //PLAYER_H

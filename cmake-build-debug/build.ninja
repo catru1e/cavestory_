@@ -105,6 +105,27 @@ build CMakeFiles/cavestory.dir/player.cpp.o: CXX_COMPILER__cavestory_unscanned_D
   OBJECT_DIR = CMakeFiles/cavestory.dir
   OBJECT_FILE_DIR = CMakeFiles/cavestory.dir
 
+build CMakeFiles/cavestory.dir/level.cpp.o: CXX_COMPILER__cavestory_unscanned_Debug /Users/monicasahakyan/CLionProjects/cavestory/level.cpp || cmake_object_order_depends_target_cavestory
+  DEP_FILE = CMakeFiles/cavestory.dir/level.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
+  INCLUDES = -I/usr/local/include -I/usr/local/include/SDL2
+  OBJECT_DIR = CMakeFiles/cavestory.dir
+  OBJECT_FILE_DIR = CMakeFiles/cavestory.dir
+
+build CMakeFiles/cavestory.dir/tile.cpp.o: CXX_COMPILER__cavestory_unscanned_Debug /Users/monicasahakyan/CLionProjects/cavestory/tile.cpp || cmake_object_order_depends_target_cavestory
+  DEP_FILE = CMakeFiles/cavestory.dir/tile.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
+  INCLUDES = -I/usr/local/include -I/usr/local/include/SDL2
+  OBJECT_DIR = CMakeFiles/cavestory.dir
+  OBJECT_FILE_DIR = CMakeFiles/cavestory.dir
+
+build CMakeFiles/cavestory.dir/tinyxml2.cpp.o: CXX_COMPILER__cavestory_unscanned_Debug /Users/monicasahakyan/CLionProjects/cavestory/tinyxml2.cpp || cmake_object_order_depends_target_cavestory
+  DEP_FILE = CMakeFiles/cavestory.dir/tinyxml2.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -fcolor-diagnostics
+  INCLUDES = -I/usr/local/include -I/usr/local/include/SDL2
+  OBJECT_DIR = CMakeFiles/cavestory.dir
+  OBJECT_FILE_DIR = CMakeFiles/cavestory.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target cavestory
@@ -113,7 +134,7 @@ build CMakeFiles/cavestory.dir/player.cpp.o: CXX_COMPILER__cavestory_unscanned_D
 #############################################
 # Link the executable cavestory
 
-build cavestory: CXX_EXECUTABLE_LINKER__cavestory_Debug CMakeFiles/cavestory.dir/main.cpp.o CMakeFiles/cavestory.dir/game.cpp.o CMakeFiles/cavestory.dir/input.cpp.o CMakeFiles/cavestory.dir/graphics.cpp.o CMakeFiles/cavestory.dir/sprite.cpp.o CMakeFiles/cavestory.dir/globals.cpp.o CMakeFiles/cavestory.dir/animatedsprite.cpp.o CMakeFiles/cavestory.dir/player.cpp.o
+build cavestory: CXX_EXECUTABLE_LINKER__cavestory_Debug CMakeFiles/cavestory.dir/main.cpp.o CMakeFiles/cavestory.dir/game.cpp.o CMakeFiles/cavestory.dir/input.cpp.o CMakeFiles/cavestory.dir/graphics.cpp.o CMakeFiles/cavestory.dir/sprite.cpp.o CMakeFiles/cavestory.dir/globals.cpp.o CMakeFiles/cavestory.dir/animatedsprite.cpp.o CMakeFiles/cavestory.dir/player.cpp.o CMakeFiles/cavestory.dir/level.cpp.o CMakeFiles/cavestory.dir/tile.cpp.o CMakeFiles/cavestory.dir/tinyxml2.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7
   LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  -lSDL2  -lSDL2_image
   LINK_PATH = -L/usr/local/lib

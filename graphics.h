@@ -33,5 +33,4 @@ private:
 
     std::map<std::string, SDL_Surface*> _spriteSheets;
 };
-
 #endif

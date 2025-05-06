@@ -1,9 +1,7 @@
 #include "sprite.h"
 #include "graphics.h"
 #include "globals.h"
-
 #include <iostream>
-
 
 Sprite::Sprite(){}
 
@@ -19,6 +17,7 @@ Sprite::Sprite(Graphics& graphics, const std::string& filePath, int sourceX, int
     if (this->_spriteSheet == NULL){
         std::cout << "Failed to load sprite texture\n";
     }
+    this->_boundingBox = Rectangle(this->_x, this->_y, width * globals::SPRITE_SCALE, height * globals::SPRITE_SCALE);
 }
 Sprite::~Sprite(){}
 
@@ -28,6 +27,32 @@ void Sprite::draw(Graphics& graphics, int x, int y) {
     graphics.blitSurface(this->_spriteSheet, &this->_sourceRect, &destinationRectangle);
 }
 
-void Sprite::update()
-{
+void Sprite::update() {
+    this->_boundingBox = Rectangle(this->_x, this->_y, this->_sourceRect.w * globals::SPRITE_SCALE,
+                                    this->_sourceRect.h * globals::SPRITE_SCALE);
+}
+
+const Rectangle Sprite::getBoundingBox() const {
+    return this->_boundingBox;
+}
+//determine which side the collision happened on
+const sides::Side Sprite::getCollisionSide(Rectangle& other) const {
+    int amtRight, amtLeft, amtTop, amtBottom;
+    amtRight = this->getBoundingBox().getRight() - other.getLeft();
+    amtLeft = other.getRight() - this->getBoundingBox().getLeft();
+    amtTop = other.getBottom() - this->getBoundingBox().getTop();
+    amtBottom = this->getBoundingBox().getBottom() - other.getTop();
+
+    int vals[4] = { abs(amtRight), abs(amtLeft), abs(amtTop), abs(amtBottom)};
+    int lowest = vals[0];
+    for (int i = 1; i < 4; i++){
+        if (vals[i] < lowest)
+            lowest = vals[i];
+    }
+    return
+            lowest == abs(amtRight) ? sides::RIGHT :
+            lowest == abs(amtLeft) ? sides::LEFT :
+            lowest == abs(amtTop) ? sides::TOP :
+            lowest == abs(amtBottom) ? sides::BOTTOM :
+            sides::NONE;
 }

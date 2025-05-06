@@ -4,6 +4,9 @@
  * Holds the info of individual sprties
 */
 #include "graphics.h"
+#include "rectangle.h"
+#include "globals.h"
+
 #include <string>
 #include <SDL2/SDL.h>
 
@@ -19,9 +22,14 @@ public:
     virtual void update();
     void draw(Graphics& graphics, int x, int y);
 
+    const Rectangle getBoundingBox() const;
+    const sides::Side getCollisionSide(Rectangle &other) const;
+
 protected:
     SDL_Rect _sourceRect;
     SDL_Texture* _spriteSheet;
+
+    Rectangle _boundingBox;
 
     float _x, _y; //position of the sprite
 private:

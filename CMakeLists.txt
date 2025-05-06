@@ -20,10 +20,11 @@ add_executable(cavestory
         main.cpp
         game.cpp
         input.cpp
+        input.h
         graphics.cpp
+        graphics.h
         sprite.cpp
         sprite.h
-        globals.cpp
         globals.h
         sprite.cpp
         sprite.h
@@ -37,6 +38,7 @@ add_executable(cavestory
         tile.h
         tinyxml2.cpp
         tinyxml2.h
+        rectangle.h
 )
 
 # Link SDL2 and SDL2_image libraries

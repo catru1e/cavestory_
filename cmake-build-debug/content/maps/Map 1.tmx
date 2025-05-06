@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="1">
- <tileset firstgid="1" name="PrtCave" tilewidth="32" tileheight="32">
-    <image source="PrtCave.png" width="516" height="160"/>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="55">
+ <tileset firstgid="1" name="PrtCave" tilewidth="32" tileheight="32" tilecount="80" columns="16">
+  <image source="../tilesets/PrtCave.png" width="512" height="160"/>
  </tileset>
  <layer id="2" name="background" width="20" height="16">
   <data>
@@ -651,4 +651,24 @@
    <tile/>
   </data>
  </layer>
+ <objectgroup id="3" name="collisions">
+  <object id="31" x="288.311" y="32.3827" width="31.3381" height="30.2935"/>
+  <object id="32" x="289.355" y="128.486" width="29.2489" height="31.3381"/>
+  <object id="33" x="224.59" y="160.869" width="157.735" height="30.2935"/>
+  <object id="41" x="387.53" y="288.311" width="28.2226" height="31.3381"/>
+  <object id="43" x="110.728" y="67.8993" width="50.141" height="220.412"/>
+  <object id="44" x="84.9944" y="249.661" width="137.506" height="35.5166"/>
+  <object id="45" x="209.966" y="252.794" width="12.5353" height="116.996"/>
+  <object id="46" x="416.797" y="255.928" width="63.7209" height="31.3381"/>
+  <object id="47" x="354.121" y="59.5425" width="19.8475" height="72.0777"/>
+  <object id="48" x="484.697" y="197.43" width="21.9367" height="65.8101"/>
+  <object id="50" x="417.842" y="320.694" width="16.7137" height="59.5425"/>
+  <object id="51" x="256.072" y="288.178" width="90.7061" height="31.3223"/>
+  <object id="52" x="224.324" y="366.437" width="191.785" height="35.5166"/>
+ </objectgroup>
+ <objectgroup color="#00ff00" id="4" name="spawn points">
+  <object id="54" name="player" x="302.204" y="266.376" width="6.37556" height="5.38524">
+   <ellipse/>
+  </object>
+ </objectgroup>
 </map>

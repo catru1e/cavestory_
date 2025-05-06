@@ -4,9 +4,12 @@
 #include "game.h"
 #include "graphics.h"
 #include "input.h"
+#include "rectangle.h"
 
 #include <SDL2/SDL.h>
 #include <algorithm>
+#include <iostream>
+#include <ostream>
 
 namespace {
     const int FPS = 50;
@@ -25,8 +28,8 @@ void Game::gameLoop(){
     Input input;
     SDL_Event event;
 
-    this->_player = Player(graphics, 100, 100);
-    this->_level = Level("map 1", Vector2(100, 100), graphics);
+    this->_level = Level("Map 1", Vector2(100, 100), graphics);
+    this->_player = Player(graphics, this->_level.getPlayerSpawnPoint());
 
     int LAST_UPDATE_TIME = SDL_GetTicks(); //gets the number of milliseconds
     //start the game loop
@@ -76,4 +79,11 @@ void Game::draw(Graphics &graphics){
 void Game::update(float elapsedTime){
     this->_player.update(elapsedTime);
     this->_level.update(elapsedTime);
+
+    //check collisions
+    std::vector<Rectangle> others;
+    if ((others = this->_level.checkTileCollisions(this->_player.getBoundingBox())).size() > 0) {
+        //player collided with at least one tile. Handle it
+        this->_player.handleTileCollisions(others);
+    }
 }

@@ -1,7 +1,6 @@
 #include "level.h"
 #include "graphics.h"
 #include "globals.h"
-
 #include "tinyxml2.h"
 
 #include <SDL2/SDL.h>
@@ -136,16 +135,79 @@ void Level::loadMap(std::string mapName, Graphics& graphics){
                      pData = pData->NextSiblingElement("data");
                  }
              }
-
              pLayer = pLayer->NextSiblingElement("layer");
          }
      }
 
+    //parse out the collision
+    XMLElement* pObjectGroup = mapNode->FirstChildElement("objectgroup");
+    if (pObjectGroup != NULL) {
+        while (pObjectGroup) {
+            const char* name = pObjectGroup->Attribute("name");
+            std::stringstream ss;
+            ss << name;
+            if (ss.str() == "collisions") {
+                XMLElement* pObject = pObjectGroup->FirstChildElement("object");
+                if (pObject != NULL) {
+                    while (pObject) {
+                        float x = std::stof(pObject->Attribute("x"));
+                        float y = std::stof(pObject->Attribute("y"));
+                        float width = std::stof(pObject->Attribute("width"));
+                        float height = std::stof(pObject->Attribute("height"));
+
+                        _collisionRects.push_back(Rectangle(
+                            static_cast<int>(std::floor(x)),
+                            static_cast<int>(std::floor(y)),
+                            static_cast<int>(std::ceil(width)),
+                            static_cast<int>(std::ceil(height))
+                        ));
+
+                        pObject = pObject->NextSiblingElement("object");
+
+                    }
+                }
+            }
+            //other object groups go here with an else if (ss.str() == "whatever")
+            else if (ss.str() == "spawn points"){
+                XMLElement* pObject = pObjectGroup->FirstChildElement("object");
+                if (pObject != NULL) {
+                    while (pObject) {
+                        float x = std::stof(pObject->Attribute("x"));
+                        float y = std::stof(pObject->Attribute("y"));
+                        const char* name = pObject->Attribute("name");
+                        std::stringstream ss;
+                        ss << name;
+                        if (ss.str() == "player") {
+                            this->_spawnPoint = Vector2(std::ceil(x),
+                                                        std::ceil(y));
+                        }
+                        pObject = pObject->NextSiblingElement("object");
+                    }
+                }
+            }
+
+            pObjectGroup = pObjectGroup->NextSiblingElement("objectgroup");
+        }
+    }
 }
+
 void Level::update(int elapsedTime){}
 
 void Level::draw(Graphics& graphics){
     for (int i = 0; i < this->_tileList.size(); i++){
         this->_tileList.at(i).draw(graphics);
     }
+}
+
+std::vector<Rectangle> Level::checkTileCollisions(const Rectangle &other) {
+    std::vector<Rectangle> others;
+    for (int i = 0; i < this->_collisionRects.size(); i++) {
+        if (this->_collisionRects.at(i).collidesWith(other)) {
+            others.push_back(this->_collisionRects.at(i));
+        }
+    }
+    return others;
+}
+ Vector2 Level::getPlayerSpawnPoint() const {
+    return this->_spawnPoint;
 }
